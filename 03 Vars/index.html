@@ -1,7 +1,59 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Variables</title>
+  <style>
+    @font-face{
+      font-family: Lato;
+      src: url('./includes/Lato-Regular.ttf');
+      font-weight: 400;
+    }
+    @font-face{
+      font-family: Lato;
+      src: url('./includes/Lato-Black.ttf');
+      font-weight: 700;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      background-color: #008000;
+      font-family: Lato;
+    }
+    h1{
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+    }
+    .controls{
+      margin: 20px 0;
+      text-align: center;
+    }
+    .image-div{
+      height: 500px;
+      width: 300px;
+      background-image: url('includes/249H.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+  
+  </style>
+</head>
 <body>
+  <h1>Variables in <br><span class="changer">CSS</span></h1>
 
+  <div class="controls">
+    <label for="border-slider">Border</label>
+    <input type="range" id="border-slider" min="0" max="13" value="3" />
+
+    <label for="blur-slider">Blur</label>
+    <input type="range" id="blur-slider" min="0" max="13" value="0" />
+  </div>
+  <div class="image-div"></div>
 </body>
-
 </html>
