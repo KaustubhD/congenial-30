@@ -19,7 +19,7 @@
     :root{
       --border: 0px;
       --blur: 0px;
-      --color: #ffffff;
+      --color: #ff0000;
     }
     body{
       display: flex;
@@ -81,7 +81,7 @@
   }
   INPUTS.forEach(input => {
     input.addEventListener('change', handleInput)
-    handleInput().bind(input)
+    input.dispatchEvent(new Event('change', {bubbles: false}))
     })
 </script>
 </html>
