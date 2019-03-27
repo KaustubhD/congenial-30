@@ -16,19 +16,27 @@
       src: url('./includes/Lato-Black.ttf');
       font-weight: 700;
     }
+    :root{
+      --border: 0px;
+      --blur: 0px;
+      --color: #ffffff;
+    }
     body{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 0;
-      background-color: #008000;
+      background-color: #006000;
       font-family: Lato;
+      color: #fff;
     }
     h1{
       font-weight: 700;
       text-align: center;
-      color: #fff;
+    }
+    .changer{
+      color: var(--color);
     }
     .controls{
       margin: 20px 0;
@@ -40,6 +48,8 @@
       background-image: url('includes/249H.jpg');
       background-size: cover;
       background-position: center center;
+      border: var(--border) solid var(--color);
+      filter: blur(var(--blur));
     }
   
   </style>
@@ -49,11 +59,29 @@
 
   <div class="controls">
     <label for="border-slider">Border</label>
-    <input type="range" id="border-slider" min="0" max="13" value="3" />
+    <input type="range" id="border-slider" data-name="border" min="0" max="13" value="3" data-unit="px" />
 
     <label for="blur-slider">Blur</label>
-    <input type="range" id="blur-slider" min="0" max="13" value="0" />
+    <input type="range" id="blur-slider" data-name="blur" min="0" max="13" value="0" data-unit="px" />
+
+    <label for="color-selector">Color</label>
+    <input type="color" id="color-selector" data-name="color" value="#ffffff" data-unit=""/>
   </div>
+
   <div class="image-div"></div>
 </body>
+<script>
+  const INPUTS = document.querySelectorAll('.controls input')
+
+  function handleInput(e){
+    console.log(this)
+    let dataset = this.dataset
+    console.log(dataset)
+    document.documentElement.style.setProperty(`--${dataset.name}`, this.value + dataset.unit)
+  }
+  INPUTS.forEach(input => {
+    input.addEventListener('change', handleInput)
+    handleInput().bind(input)
+    })
+</script>
 </html>
