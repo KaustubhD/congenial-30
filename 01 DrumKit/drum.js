@@ -1,5 +1,5 @@
 function playSound(e){
-  const element = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+  const element = document.querySelector(`.key[data-key="${e.keyCode}"]`) ? e.eventType == 'keydown' : e.target
   
   if(!element)
     return
@@ -18,5 +18,8 @@ function removeClass(e){
     this.classList.remove('playing')
 }
 
-document.querySelectorAll('.key').forEach(key => key.addEventListener('transitionend', removeClass))
+document.querySelectorAll('.key').forEach(key => {
+  key.addEventListener('click', playSound)
+  key.addEventListener('transitionend', removeClass)
+})
 document.addEventListener('keydown', playSound)
