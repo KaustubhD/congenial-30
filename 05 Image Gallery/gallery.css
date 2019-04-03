@@ -23,6 +23,7 @@ html, body{
   align-items: center;
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
   flex: 1;
   flex-direction: column;
   overflow: hidden;
