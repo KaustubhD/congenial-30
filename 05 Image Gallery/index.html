@@ -38,11 +38,20 @@
   </div>
 </body>
 <script>
+
 const panels = document.querySelectorAll('.panel')
 
-toggleClass = (e) => {
-  e.target.classList.toggle('open')
+toggleClassOpen = (e) => {
+  e.currentTarget.classList.toggle('open')
 }
-panels.forEach(pan => pan.addEventListener('click', toggleClass))
+
+toggleClassActive = (e) => {
+  if(e.propertyName.includes('flex'))
+    e.currentTarget.classList.toggle('active')
+}
+
+panels.forEach(pan => pan.addEventListener('click', toggleClassOpen.bind(this)))
+panels.forEach(pan => pan.addEventListener('transitionend', toggleClassActive))
+
 </script>
 </html>
