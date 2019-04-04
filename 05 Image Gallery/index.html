@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Image Gallery</title>
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300" rel="stylesheet">
+  <link href="gallery.css" rel="stylesheet">
+</head>
+<body>
+  <div class="panel-container">
+    <div class="panel p1">
+      <span>ABC</span>
+      <span>Get</span>
+      <span>GHI</span>
+    </div>
+    <div class="panel p2">
+      <span>ABC</span>
+      <span>This</span>
+      <span>GHI</span>
+    </div>
+    <div class="panel p3">
+      <span>ABC</span>
+      <span>Man</span>
+      <span>GHI</span>
+    </div>
+    <div class="panel p4">
+      <span>ABC</span>
+      <span>A</span>
+      <span>GHI</span>
+    </div>
+    <div class="panel p5">
+      <span>ABC</span>
+      <span>Shield</span>
+      <span>GHI</span>
+    </div>
+  </div>
+</body>
+<script>
+
+const panels = document.querySelectorAll('.panel')
+
+toggleClassOpen = (e) => {
+  e.currentTarget.classList.toggle('open')
+}
+
+toggleClassActive = (e) => {
+  if(e.propertyName.includes('flex'))
+    e.currentTarget.classList.toggle('active')
+}
+
+panels.forEach(pan => pan.addEventListener('click', toggleClassOpen.bind(this)))
+panels.forEach(pan => pan.addEventListener('transitionend', toggleClassActive))
+
+</script>
+</html>
