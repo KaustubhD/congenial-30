@@ -7,3 +7,4 @@ To check out
 3. [03 Variables](<https://kaustubhd.github.io/congenial-30/03 Variables>)
 4. [04 Array Cardio](<https://kaustubhd.github.io/congenial-30/04 Array Cardio>)
 5. [05 Image Gallery](<https://kaustubhd.github.io/congenial-30/05 Image Gallery>)
+6. [06 Type Ahead](<https://kaustubhd.github.io/congenial-30/06 Type Ahead>)
