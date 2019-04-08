@@ -21,21 +21,28 @@
   canvas.width = document.documentElement.clientWidth
   canvas.height = document.documentElement.clientHeight
 
-  canvas.style.backgroundColor = '#555'
-
   ctx.lineJoin = ctx.lineCap = 'round'
+  ctx.lineWidth = 7
 
+  let path = []
   let isDrawing = false
   let lastX, lastY
+  let h = 0
 
 
   let draw = e => {
     if(!isDrawing) return
 
     ctx.beginPath()
+    ctx.strokeStyle = `hsl(${h}, 100%, 50%)`
     ctx.moveTo(lastX, lastY)
     ctx.lineTo(e.offsetX, e.offsetY)
     ctx.stroke()
+
+    lastX = e.offsetX
+    lastY = e.offsetY
+    h++
+    h %= 360
   }
 
 
