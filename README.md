@@ -9,3 +9,4 @@ To check out
 5. [05 Image Gallery](<https://kaustubhd.github.io/congenial-30/05 Image Gallery>)
 6. [06 Type Ahead](<https://kaustubhd.github.io/congenial-30/06 Type Ahead>)
 7. [07 Array Cardio 2](<https://kaustubhd.github.io/congenial-30/07 Array Cardio 2>)
+8. [08 Draw](<https://kaustubhd.github.io/congenial-30/08 Draw>)
