@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Type Ahead</title>
+  <link href="type.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <input type="text" id="input-field" placeholder="Search a place">
+    <ul class="suggestions"></ul>
+  </div>
+</body>
+<script>  
+  
+  const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json'
+
+  let places
+  let reg
+
+  fetch(endpoint)
+    .then(blob => blob.json())
+    .then(data => places = data)
+
+  let inp = document.getElementById('input-field')
+  let ul = document.querySelector('ul')
+
+  let handleInput = (ev) => {
+    let val = ev.target.value
+    if(!val)
+      ul.innerHTML = ''
+    else{
+      let filteredPlaces = matchPlaces(val)
+      reg = new RegExp(val, 'gi')
+      let lis = filteredPlaces.map(place => {
+        let customState = place.state.replace(reg, `<mark>${val}</mark>`)
+        let customCity = place.city.replace(reg, `<mark>${val}</mark>`)
+        return `
+          <li>
+            <span>${customCity}, ${customState}</span>
+            <span>${place.population}</span>
+          </li>
+        `
+      }).join('')
+      ul.innerHTML = lis
+    }  
+  }
+
+  let matchPlaces = (toMatch) => {
+    console.log(places)
+    console.log(toMatch)
+    return places.filter(place => {
+  //     return place.city.includes(toMatch) || place.state.includes(toMatch)
+      reg = new RegExp(toMatch, 'gi')
+      return reg.test(place.city) || reg.test(place.state)
+    })
+  }
+
+  inp.addEventListener('input', handleInput)
+  
+</script>
+</html>
