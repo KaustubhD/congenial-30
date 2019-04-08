@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drawing</title>
+  <style>
+    body{
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+</body>
+<script>
+  const canvas = document.getElementById('canvas')
+  const ctx = canvas.getContext('2d')
+
+  canvas.width = document.documentElement.clientWidth
+  canvas.height = document.documentElement.clientHeight
+
+  canvas.style.backgroundColor = '#555'
+
+  ctx.lineJoin = ctx.lineCap = 'round'
+
+  let isDrawing = false
+  let lastX, lastY
+
+
+  let draw = e => {
+    if(!isDrawing) return
+
+    ctx.beginPath()
+    ctx.moveTo(lastX, lastY)
+    ctx.lineTo(e.offsetX, e.offsetY)
+    ctx.stroke()
+  }
+
+
+  canvas.addEventListener('mousemove', draw)
+  canvas.addEventListener('mousedown', ev => {
+    isDrawing = true
+    lastX = ev.offsetX
+    lastY = ev.offsetY
+  })
+  canvas.addEventListener('mouseup', ev => isDrawing = false)
+  canvas.addEventListener('mouseout', ev => isDrawing = false)
+
+
+</script>
+</html>
