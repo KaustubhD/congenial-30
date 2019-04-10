@@ -1,0 +1,30 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+}
+body{
+  display: flex;
+  margin: 0;
+  background: #A2352B;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  background: #efefef;
+  border-radius: 3px;
+  /* padding: 40px; */
+  box-shadow: 0 0 16px 0px rgba(0,0,0,0.1), 0 3px 7px 0px rgba(0,0,0,0.4)
+}
+.check{
+  display: flex;
+  min-width: 200px;
+  border-bottom: 1px solid #333;
+}
+input{
+  margin: 15px;
+}
+p{
+  margin: 0;
+}
