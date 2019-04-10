@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    h4{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h4>You're better off looking in the console</h4>
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }]
+
+    makeGreen = () => {
+      const p = document.querySelector('p')
+      p.style.color = '#BADA55'
+      p.style.fontSize = '50px'
+    }
+    
+    // Regular
+      console.log('Wassssuuuup !')
+
+    // Interpolated
+      console.log('Do not interru.. %s', 'Hey vSauce, Michael here')
+
+    // Styled
+      console.log('%cBoogie Shoes', 'font-size: 40px;padding: 10px;background-color: #FFEB3B;color: #536DFE;border-radius:4px;text-shadow:0 2px 5px rgba(0,0,0,0.3)')
+
+    // warning!
+      console.warn('I don\'t share good food')
+
+    // Error :|
+      console.error('Error: Check again you dumb f*** !')
+
+    // Info
+      console.info('Vaccines aren\'t real\nChange my mind')
+
+    // Testing
+      console.assert(1 === 2, 'I thought so !')
+
+    // clearing
+      // console.clear()
+
+    // Viewing DOM Elements
+      const p = document.querySelector('p')
+      console.log(p) // As an element
+      console.dir(p) // As an object
+
+    // Grouping together
+      dogs.forEach(dog => {
+        console.groupCollapsed(`Doggo ${dog.name}`)
+        console.log(`Name: ${dog.name}`)
+        console.log(`Age: ${dog.age}`)
+        console.log('Happy: Obviously')
+        console.groupEnd(`Doggo ${dog.name}`)
+      })
+
+    // counting
+      console.count('Yeet')
+      console.count('Yeet')
+      console.count('Yeet')
+
+    // timing
+      console.time('Counting')
+      for(let i = 0; i < 3000; i++){ j = i }
+      console.timeEnd('Counting')
+
+  </script>
+</body>
+</html>
