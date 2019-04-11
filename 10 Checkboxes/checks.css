@@ -3,6 +3,7 @@
 }
 html, body{
   height: 100%;
+  font-size: 25px;
 }
 body{
   display: flex;
@@ -10,21 +11,32 @@ body{
   background: #A2352B;
   justify-content: center;
   align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .container{
+  max-width: 400px;
   background: #efefef;
-  border-radius: 3px;
+  border-radius: 5px;
   /* padding: 40px; */
-  box-shadow: 0 0 16px 0px rgba(0,0,0,0.1), 0 3px 7px 0px rgba(0,0,0,0.4)
+  box-shadow: 0 0 16px 0px rgba(0,0,0,0.2), 0px 3px 10px 0px rgba(0,0,0,0.4);
+  overflow: hidden;
 }
 .check{
   display: flex;
   min-width: 200px;
-  border-bottom: 1px solid #333;
+  align-items: center;
+  border-bottom: 1px solid #d1d1d1;
 }
 input{
-  margin: 15px;
+  margin: 0.7rem;
 }
 p{
   margin: 0;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border-left: 2px solid #A3E4FF;
+  font-weight: 200;
+}
+input:checked + p{
+  text-decoration: line-through;
 }

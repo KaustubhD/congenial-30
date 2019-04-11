@@ -11,7 +11,7 @@
   <div class="container">
     <div class="check">
       <input id="1" type="checkbox">
-      <p>Text</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="check">
       <input id="2" type="checkbox">
@@ -35,4 +35,25 @@
     </div>
   </div>
 </body>
+<script>
+
+const inputs = document.querySelectorAll('input')
+let lastChanged
+
+
+handleChange = (ev) => {
+  if(ev.shiftKey && lastChanged){
+    let [start, end] = [Math.min(lastChanged, ev.target.id), Math.max(lastChanged, ev.target.id)]
+    for(let i = start; i <= end; i++){
+      inputs[i - 1].checked = ev.target.checked
+    }
+  }
+  lastChanged = ev.target.id
+}
+
+
+
+inputs.forEach(inp => inp.addEventListener('click', handleChange))
+
+</script>
 </html>
