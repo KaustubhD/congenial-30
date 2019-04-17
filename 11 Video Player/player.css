@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  outline: 0;
 }
 html, body{
   height: 100%;
@@ -21,6 +22,9 @@ body{
   margin: 10px;
   box-shadow: 0 0 15px 0px rgba(145, 98, 98, 0.2), 0 5px 10px 0px rgba(0,0,0,0.4);  
 }
+.container:hover .custom-controls{
+  transform: translateY(0);
+}
 video{
   outline: none;
   background: #000;
@@ -32,6 +36,7 @@ video{
   width: 100%;
   flex-wrap: wrap;
   background: rgba(0,0,0,0.6);
+  transform: translateY(calc(100% - 5px));
   transition: transform 200ms ease-in-out;
 }
 .custom-controls > *{
@@ -46,6 +51,8 @@ video{
   background: rgba(0,0,0,0.8);
 }
 .progress-bar{
+  display: flex;
+  position: relative;
   height: 10px;
   flex-basis: 100%;
 }
@@ -54,10 +61,19 @@ video{
   height: 100%;
   background-color: #ff0;
   border: 1px solid #000;
-  transform: translateX(-100%);
+  flex-basis: 50%;
+  /* transform: translateX(-50%); */
+}
+.custom-controls *{
+  color: #80d0c7;
+}
+.custom-controls label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
 }
 .custom-controls button{
-  color: #80d0c7;
   background-color: transparent;
   border: 0;
   padding: 0;

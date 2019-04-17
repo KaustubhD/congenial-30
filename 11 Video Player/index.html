@@ -18,11 +18,16 @@
         <div class="progress-completed"></div>
       </div>
       <button class="playpause" title="Play/Pause">Pl</button>
-      <input type="range" class="volume-input" title="volume" min="0" max="100" step="1" value="50"/>
-      <input type="range" class="speed-input" title="Speed" min="0.5" max="2" step="0.5" value="1"/>
+      <label for="volume-input">Volume:
+        <input type="range" id="volume-input" name="volume" title="volume" min="0" max="1" step="0.01" value="0.5"/>
+      </label>
+      <label for="speed-input">Speed:
+        <input type="range" id="speed-input" name="playbackRate" title="Speed" min="0.5" max="2" step="0.05" value="1"/>
+      </label>
       <button class="seek-button" data-skip="-10"><<</button>
-      <button class="seek-button" data-skip="15">>></button>
+      <button class="seek-button" data-skip="10">>></button>
     </div>
   </div>
 </body>
+<script src="player.js"></script>
 </html>
