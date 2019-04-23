@@ -11,7 +11,6 @@ showGIF = () => {
     let img = document.querySelector('img')
     img.src = image_url
     img.style.display = 'block'
-  })
 }
 
 preloadGIF = () => {
