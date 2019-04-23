@@ -13,3 +13,4 @@ To check out
 9.  [09 Dev Tools Tips](<https://kaustubhd.github.io/congenial-30/09 Dev Tools Tips>)
 10. [10 Checkboxes](<https://kaustubhd.github.io/congenial-30/10 Checkboxes>)
 11. [11 Video Player](<https://kaustubhd.github.io/congenial-30/11 Video Player>)
+12. [12 Konami](<https://kaustubhd.github.io/congenial-30/12 Konami>)
