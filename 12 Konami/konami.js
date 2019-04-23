@@ -28,4 +28,5 @@ preloadGIF = () => {
 
 let image_url = ''
 document.addEventListener('keydown', handleKey)
+preloadGIF()
 console.log('Hint, It\'s: Up Down Up Up Down Right')
