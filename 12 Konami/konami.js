@@ -1,27 +1,32 @@
 let seq = []
 handleKey = ev => {
-  //console.log(ev.key)
   seq.push(ev.key.slice(5))
   seq = seq.slice(-6)
-  //console.log(seq)
   if(seq.join('') == 'UpDownUpUpDownRight'){
-    //console.log('%cDingDingDing !', 'font-size: 30px;font-family: Helvetica')
     showGIF()
   }
 }
 
 showGIF = () => {
+    let img = document.querySelector('img')
+    img.src = image_url
+    img.style.display = 'block'
+  })
+}
+
+preloadGIF = () => {
+
   let url = 'https://api.giphy.com/v1/gifs/random?api_key=<key>&tag=funny&limit=1'
   fetch(url, {
     headers:{
       'Content-Type': 'application/json', 
     }
   }).then(raw => raw.json()).then(body => {
-    let img = document.querySelector('img')
-    img.src = body.data.image_url
-    img.style.display = 'block'
-  })
+    image_url = body.data.image_url
+  }).catch(er => console.error(er))
+
 }
 
+let image_url = ''
 document.addEventListener('keydown', handleKey)
 console.log('Hint, It\'s: Up Down Up Up Down Right')
