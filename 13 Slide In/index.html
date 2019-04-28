@@ -26,6 +26,8 @@
       background: white;
       padding: 40px;
       text-align: justify;
+      overflow: hidden;
+      box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
     }
     .align-left{
       float: left;
@@ -76,9 +78,9 @@
 
 </body>
 <script>
-  debounce = (func, wait = 20, immediate = true) => {
+  function debounce(func, wait = 20, immediate = true){
     let timeout;
-    return () => {
+    return function(){
       let context = this, args = arguments
       let later = function() {
         timeout = null
@@ -91,6 +93,25 @@
     }
   }
 
-  
+  let images = document.querySelectorAll('.slide-in')
+
+  slideFn = () => {
+    images.forEach(image => {
+      const slideHeight = window.scrollY + window.innerHeight
+      const slideThreshold = slideHeight - image.height * 0.5
+      const imageBottom = image.offsetTop + image.height
+      const isAtLeastHalfVisible = slideThreshold > image.offsetTop
+      const isScrolledPast = window.scrollY > imageBottom
+      
+      if(isAtLeastHalfVisible && !isScrolledPast){
+        image.classList.add('active')
+      }
+      else{
+        image.classList.remove('active')
+      }
+    })
+  }
+
+  window.addEventListener('scroll', debounce(slideFn)) 
 </script>
 </html>
