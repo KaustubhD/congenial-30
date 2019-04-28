@@ -1,5 +1,5 @@
 function playSound(e){
-  const element = document.querySelector(`.key[data-key="${e.keyCode}"]`) ? e.eventType == 'keydown' : e.target
+  const element = e.type == 'keydown' ? document.querySelector(`.key[data-key="${e.keyCode}"]`) : e.target
   
   if(!element)
     return
@@ -22,4 +22,4 @@ document.querySelectorAll('.key').forEach(key => {
   key.addEventListener('click', playSound)
   key.addEventListener('transitionend', removeClass)
 })
-document.addEventListener('keydown', playSound)
+document.addEventListener('keydown', playSound, {bubbles: false})
