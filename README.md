@@ -14,3 +14,4 @@ To check out
 10. [10 Checkboxes](<https://kaustubhd.github.io/congenial-30/10 Checkboxes>)
 11. [11 Video Player](<https://kaustubhd.github.io/congenial-30/11 Video Player>)
 12. [12 Konami](<https://kaustubhd.github.io/congenial-30/12 Konami>)
+13. [13 Slide In](<https://kaustubhd.github.io/congenial-30/13 Slide In>)
