@@ -28,7 +28,7 @@
 <script>
   const addDishes = document.querySelector('.add-dishes');
   const dishesList = document.querySelector('.plates');
-  const dishes = [];
+  const dishes = JSON.parse(localStorage.getItem('dishes')) || [];
 
   function showDishes(dishes = [], element){
     element.innerHTML = dishes.reduce((acc, dish, ind) => {
@@ -42,20 +42,32 @@
   }
 
   function addDish(ev){
-    console.log('Heelooo')
     ev.preventDefault()
     const dish = {
       name: this.querySelector('[type=text]').value,
       prepared: false
     }
-    //console.log(dish)
     dishes.push(dish)
-    console.table(dishes)
+    updateList()
     showDishes(dishes, dishesList)
-    this.reset()
+    this.reset() // Reset the form on submit
+  }
+
+  function handleChecks(e){
+    if(e.srcElement.matches('input')){
+      const ind = e.target.dataset.index
+      dishes[ind].prepared = !dishes[ind].prepared
+      updateList()
+    }
+  }
+
+  function updateList(){
+    localStorage.setItem('dishes', JSON.stringify(dishes))  
   }
 
   addDishes.addEventListener('submit', addDish)
+  dishesList.addEventListener('click', handleChecks)
+  showDishes(dishes, dishesList)
 
 </script>
 
