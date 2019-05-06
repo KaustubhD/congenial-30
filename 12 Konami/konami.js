@@ -15,7 +15,7 @@ showGIF = () => {
 
 preloadGIF = () => {
 
-let url = 'https://api.giphy.com/v1/gifs/random?api_key=<key>&tag=funny&limit=1'
+let url = 'https://api.giphy.com/v1/gifs/random?api_key=YGD5bJjlP0OYshZLKMj7tp5YXbaD81mo&tag=funny&limit=1'
   fetch(url, {
     headers:{
       'Content-Type': 'application/json', 
