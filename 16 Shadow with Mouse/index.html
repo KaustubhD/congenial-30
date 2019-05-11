@@ -31,10 +31,41 @@
   h1 {
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
+    background-color: rgb(200, 170, 190);
   }
   </style>
 
 <script>
+
+const hero = document.querySelector('.hero')
+const text = hero.querySelector('h1')
+
+
+function moveShadow(e){
+  //console.log(e)
+  const {offsetHeight: h, offsetWidth: w} = e.target
+  let {offsetX: x, offsetY: y} = e
+  const max = 20
+
+  if(e.target !== this){
+    x += e.target.offsetLeft
+    y += e.target.offsetTop
+  }
+  //console.log(w, h)
+  // TODO: figure out calculations for normalisation
+  //x = x /
+  //y = y /
+
+
+  //text.style.textShadow = `${x}px ${y}px 0 rgba(0, 0, 0, 1)`
+  console.log(x, y, e.target)
+  
+}
+
+
+hero.addEventListener('mousemove', moveShadow)
+
+
 </script>
 </body>
 </html>
