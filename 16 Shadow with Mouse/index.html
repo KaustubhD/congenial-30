@@ -7,7 +7,7 @@
 <body>
 
   <div class="hero">
-    <h1 contenteditable>🔥WOAH!</h1>
+    <h1 contenteditable>🔥YAAH!</h1>
   </div>
 
   <style>
@@ -29,9 +29,8 @@
   }
 
   h1 {
-    text-shadow: 10px 10px 0 rgba(0,0,0,1);
+    text-shadow: 1px 1px 0 rgba(200, 30, 150, 0.7);
     font-size: 100px;
-    background-color: rgb(200, 170, 190);
   }
   </style>
 
@@ -42,26 +41,32 @@ const text = hero.querySelector('h1')
 
 
 function moveShadow(e){
-  //console.log(e)
-  const {offsetHeight: h, offsetWidth: w} = e.target
+  const {offsetHeight: h, offsetWidth: w} = hero
   let {offsetX: x, offsetY: y} = e
-  const max = 20
+  const max = 30
 
   if(e.target !== this){
     x += e.target.offsetLeft
     y += e.target.offsetTop
   }
-  //console.log(w, h)
-  // TODO: figure out calculations for normalisation
-  //x = x /
-  //y = y /
 
+  /* **
 
-  //text.style.textShadow = `${x}px ${y}px 0 rgba(0, 0, 0, 1)`
-  console.log(x, y, e.target)
+    x / w       -> to convert the range of [0, w] to [0, 1]
+    * max       -> to convert the range of [0, 1] to [0, max]
+    - max / 2   -> to convert the range of [0, max] to [-max/2, max/2]
   
-}
+  ** */
 
+  x = (x / w) * max - (max / 2)
+  y = (y / h) * max - (max / 2)
+
+
+  x = Math.round(x)
+  y = Math.round(y)
+
+  text.style.textShadow = `${x}px ${y}px 0 rgba(200, 30, 150, 0.7)` 
+}
 
 hero.addEventListener('mousemove', moveShadow)
 
