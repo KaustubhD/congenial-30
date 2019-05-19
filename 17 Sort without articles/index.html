@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sort Without Articles</title>
-</head>
-<body>
-
   <style>
-    body {
+    body{
       margin: 0;
       font-family: sans-serif;
-      background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+      background: url("https://source.unsplash.com/3Xj6BntfsIU/2000x2000");
       background-size: cover;
       display: flex;
       align-items: center;
       min-height: 100vh;
+      padding: 20px 0;
     }
-
-    #bands {
+    #bands{
       list-style: inside square;
       font-size: 20px;
       background: white;
@@ -26,30 +25,32 @@
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
     }
-    
-    #bands li {
+    #bands li{
       border-bottom: 1px solid #efefef;
       padding: 20px;
     }
-    
-    #bands li:last-child {
+    #bands li:last-child{
       border-bottom: 0;
     }
-
-    a {
+    a{
       color: #ffc600;
       text-decoration: none;
     }
-
   </style>
+</head>
+
+<body>
 
   <ul id="bands"></ul>
 
-<script>
-const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+</body>
 
+<script>
+const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog']
+
+let regularise = (str) => str.replace(/^(The|A|An)\s/i, '').trim()
+bands.sort((a, b) => regularise(a) > regularise(b) ? 1 : -1)
+document.querySelector('#bands').innerHTML = bands.reduce((acc, band) => acc + `<li>${band}</li>`, ``)
 
 </script>
-
-</body>
 </html>
