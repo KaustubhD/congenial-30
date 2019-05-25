@@ -19,3 +19,4 @@ To check out
 15. [15 Local and Delegate](<https://kaustubhd.github.io/congenial-30/15 Local and Delegate>)
 16. [16 Shadow with Mouse](<https://kaustubhd.github.io/congenial-30/16 Shadow with Mouse>)
 17. [17 Sort without Articles](<https://kaustubhd.github.io/congenial-30/17 Sort without Articles>)
+18. [18 Reduce](<https://kaustubhd.github.io/congenial-30/18 Reduce>)
