@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+</head>
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after { 
+    box-sizing: inherit; 
+  }
+
+  div {
+    border-radius: 6px; 
+    width: 100%;
+    padding: 100px;
+  }
+
+  .one {
+    background: seagreen;
+  }
+
+  .two {
+    background: mediumseagreen;
+  }
+
+  .three {
+    background: lightgreen;
+  }
+</style>
+
+<script>
+  const divs = document.querySelectorAll('div')
+  let track = 0
+  function logText(e){
+
+    // e.stopPropagation() // Stop the event in its path !
+
+    setTimeout(() => {
+      this.style.transform = 'translate(0, -8px)'
+      this.style.boxShadow = '0 4px 10px rgba(0,0,0,0.6)'
+      this.style.transition = '200ms ease-in-out'
+      console.log(this.classList)
+    }, 1000 * track++)
+
+  }
+
+//   divs.forEach(div => div.addEventListener('click', logText, {capture: true}))       // Fires the event on its way down the DOM (capture)
+
+  divs.forEach(div => div.addEventListener('click', logText))      // Fires the event on its way up the DOM i.e the default behaviour (bubble)
+
+  // divs.forEach(div => div.addEventListener('click', logText, {once: true}))       //  Removes the listener after firing once
+</script>
+</body>
+</html>

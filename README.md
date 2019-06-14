@@ -26,4 +26,4 @@ To check out
 22. [22 Links Highlight](<https://kaustubhd.github.io/congenial-30/22 Links Highlight>)
 23. [23 Text to Speech](<https://kaustubhd.github.io/congenial-30/23 Text to Speech>)
 24. [24 Sticky Nav](<https://kaustubhd.github.io/congenial-30/24 Sticky Nav>)
-
+25. [25 Capture and Bubble](<https://kaustubhd.github.io/congenial-30/25 Capture and Bubble>)
