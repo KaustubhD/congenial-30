@@ -27,6 +27,28 @@
 
   <script>
     // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const anchors = document.querySelectorAll('a')
+    const highlight = document.createElement('span')
+
+    highlight.className = 'highlight'
+    document.body.appendChild(highlight)
+
+    function moveIt(){
+      //console.log('I like to move it move it !')
+
+      let position = this.getBoundingClientRect()
+      let newCoords = {
+        top: position.top + window.scrollY,
+        left: position.left + window.scrollX
+      }
+
+
+      highlight.style.width = `${position.width}px`
+      highlight.style.height = `${position.height}px` 
+      highlight.style.transform = `translate(${newCoords.left}px, ${newCoords.top}px)`
+    }
+
+    anchors.forEach(a => a.addEventListener('mouseenter', moveIt))
   </script>
 </body>
 </html>

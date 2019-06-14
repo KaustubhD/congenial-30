@@ -22,4 +22,6 @@ To check out
 18. [18 Reduce](<https://kaustubhd.github.io/congenial-30/18 Reduce>)
 19. [19 Webcam Fun](<https://kaustubhd.github.io/congenial-30/19 Webcam fun>)
 20. [20 Speech](<https://kaustubhd.github.io/congenial-30/20 Speech>)
-20. [21 Geolocation](<https://kaustubhd.github.io/congenial-30/21 Geolocation>)
+21. [21 Geolocation](<https://kaustubhd.github.io/congenial-30/21 Geolocation>)
+22. [22 Links Highlight](<https://kaustubhd.github.io/congenial-30/22 Links Highlight>)
+23. [23 Text to Speech](<https://kaustubhd.github.io/congenial-30/23 Text to Speech>)
