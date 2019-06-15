@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>28 Video Speeder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+</body>
+<script>
+  const speed = document.querySelector('.speed')
+  const bar = document.querySelector('.speed-bar')
+  const video = document.querySelector('video')
+
+  let y, percentage, heightPercent
+  const min = 0.4, max = 4
+
+  speed.addEventListener('mousemove', (e) => {
+    y = e.pageY - speed.offsetTop
+    percentage = y / speed.clientHeight
+    playRate = (percentage * (max - min)) + min
+
+    bar.style.height = (percentage * 100) + '%'
+    bar.textContent = playRate.toFixed(2) + 'x'
+    video.playbackRate = playRate
+  
+  })
+</script>
+</html>
