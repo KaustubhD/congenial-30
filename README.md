@@ -28,3 +28,4 @@ To check out
 24. [24 Sticky Nav](<https://kaustubhd.github.io/congenial-30/24 Sticky Nav>)
 25. [25 Capture and Bubble](<https://kaustubhd.github.io/congenial-30/25 Capture and Bubble>)
 26. [26 Links Highlight again](<https://kaustubhd.github.io/congenial-30/26 Links Highlight again>)
+27. [27 Click and Drag](<https://kaustubhd.github.io/congenial-30/27 Click and Drag>)
