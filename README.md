@@ -31,3 +31,4 @@ To check out
 27. [27 Click and Drag](<https://kaustubhd.github.io/congenial-30/27 Click and Drag>)
 28. [28 Video Speeder](<https://kaustubhd.github.io/congenial-30/28 Video Speeder>)
 29. [29 Timer](<https://kaustubhd.github.io/congenial-30/29 Timer>)
+30. [30 Whack A Mole](<https://kaustubhd.github.io/congenial-30/30 Whack A Mole>)
